@@ -13,9 +13,9 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 max-w-[1000px] mx-auto px-6 py-32">
-        <div className="space-y-6">
+        <div className="space-y-5">
           <motion.p
-            className="text-sm text-accent font-medium tracking-wider uppercase"
+            className="text-sm text-accent tracking-[0.15em] uppercase"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -26,7 +26,7 @@ export function Hero() {
           <WaveName text={personal.name} />
 
           <motion.p
-            className="text-lg sm:text-xl text-muted max-w-lg leading-relaxed"
+            className="text-lg sm:text-xl text-muted max-w-lg leading-[1.6]"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
@@ -35,14 +35,14 @@ export function Hero() {
           </motion.p>
 
           <motion.div
-            className="flex flex-wrap gap-4 pt-4"
+            className="flex flex-wrap gap-4 pt-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
           >
             <a
-              href="#experience"
-              className="group inline-flex items-center gap-2 px-5 py-2.5 bg-foreground text-background text-sm font-medium rounded-full hover:opacity-90 transition-opacity"
+              href="/projects"
+              className="group inline-flex items-center gap-2 px-5 py-2.5 bg-foreground text-background text-sm tracking-wide rounded-full hover:opacity-90 transition-opacity"
             >
               View my work
               <svg
@@ -52,14 +52,15 @@ export function Hero() {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                className="group-hover:translate-y-0.5 transition-transform"
+                className="group-hover:translate-x-0.5 transition-transform"
+                aria-hidden="true"
               >
-                <path d="M12 5v14M5 12l7 7 7-7" />
+                <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </a>
             <a
               href={`mailto:${personal.email}`}
-              className="inline-flex items-center gap-2 px-5 py-2.5 border border-border text-sm font-medium rounded-full hover:border-muted transition-colors"
+              className="inline-flex items-center gap-2 px-5 py-2.5 border border-border text-sm tracking-wide rounded-full hover:border-muted transition-colors"
             >
               Get in touch
             </a>

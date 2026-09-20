@@ -26,7 +26,7 @@ export default function TastePage() {
           >
             <a
               href="/"
-              className="inline-flex items-center gap-2 text-sm text-muted hover:text-foreground transition-colors mb-12"
+              className="inline-flex items-center gap-2 text-sm text-muted hover:text-foreground transition-colors mb-16"
             >
               <svg
                 width="14"
@@ -35,6 +35,7 @@ export default function TastePage() {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
+                aria-hidden="true"
               >
                 <path d="M19 12H5M12 19l-7-7 7-7" />
               </svg>
@@ -46,32 +47,34 @@ export default function TastePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="mb-16"
+            className="mb-20"
           >
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
+            <h1 className="text-4xl sm:text-5xl font-display tracking-tight mb-4">
               Taste
             </h1>
-            <p className="text-lg text-muted max-w-lg leading-relaxed">
+            <p className="text-lg text-muted max-w-lg leading-[1.6]">
               A curated collection of things that shaped how I think, see, and
               build. Not exhaustive — just the ones that stuck.
             </p>
           </motion.div>
 
-          <div className="space-y-20">
+          <div className="space-y-24">
             {categories.map((cat) => (
               <SectionReveal key={cat.key}>
-                <h2 className="text-xs font-medium text-accent tracking-wider uppercase mb-6">
+                <h2 className="text-sm text-accent tracking-[0.15em] uppercase mb-8">
                   {cat.label}
                 </h2>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-px bg-border rounded-lg overflow-hidden">
                   {taste[cat.key].map((item, i) => (
                     <StaggerChild key={i} index={i}>
-                      <div className="group p-4 rounded-lg border border-border hover:border-accent/30 bg-card transition-all duration-300">
+                      <div className="group p-5 bg-card hover:bg-accent-muted transition-colors duration-200">
                         <h3 className="font-medium text-sm group-hover:text-accent transition-colors">
                           {item.title}
                         </h3>
-                        <p className="text-xs text-muted mt-1">{item.note}</p>
+                        <p className="text-xs text-muted mt-1.5 leading-[1.5]">
+                          {item.note}
+                        </p>
                       </div>
                     </StaggerChild>
                   ))}

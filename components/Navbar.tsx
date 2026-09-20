@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
-  { href: "#about", label: "About" },
+  { href: "/#about", label: "About" },
   { href: "/projects", label: "Projects" },
   { href: "/taste", label: "Taste" },
 ];
@@ -19,16 +19,19 @@ export function Navbar() {
       initial={{ y: -80 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+      role="navigation"
+      aria-label="Main navigation"
     >
       <div className="max-w-[1000px] mx-auto px-6 h-14 flex items-center justify-between">
         <a
           href="/"
-          className="text-sm font-medium tracking-tight hover:text-accent transition-colors"
+          className="text-sm tracking-wide hover:text-accent transition-colors"
+          aria-label="Joel Mathew — Home"
         >
           jsm
         </a>
 
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
             <a
               key={link.href}
@@ -46,7 +49,8 @@ export function Navbar() {
           <button
             onClick={() => setOpen(!open)}
             className="flex flex-col gap-1.5 w-6"
-            aria-label="Toggle menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
           >
             <motion.span
               className="block h-[1.5px] bg-foreground origin-center"

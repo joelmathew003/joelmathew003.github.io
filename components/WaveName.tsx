@@ -129,7 +129,7 @@ export function WaveName({ text }: WaveNameProps) {
   let charIndex = 0;
 
   return (
-    <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-[1.1]">
+    <h1 className="text-5xl sm:text-6xl md:text-7xl font-display font-bold tracking-tight leading-[1.05]">
       {words.map((word, wi) => {
         const wordChars = word.split("").map((_, ci) => {
           const idx = charIndex++;

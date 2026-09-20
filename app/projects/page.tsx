@@ -20,7 +20,7 @@ export default function ProjectsPage() {
           >
             <a
               href="/"
-              className="inline-flex items-center gap-2 text-sm text-muted hover:text-foreground transition-colors mb-12"
+              className="inline-flex items-center gap-2 text-sm text-muted hover:text-foreground transition-colors mb-16"
             >
               <svg
                 width="14"
@@ -29,6 +29,7 @@ export default function ProjectsPage() {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
+                aria-hidden="true"
               >
                 <path d="M19 12H5M12 19l-7-7 7-7" />
               </svg>
@@ -40,21 +41,21 @@ export default function ProjectsPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="mb-20"
+            className="mb-24"
           >
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
+            <h1 className="text-4xl sm:text-5xl font-display tracking-tight mb-4">
               Work
             </h1>
-            <p className="text-lg text-muted max-w-lg leading-relaxed">
+            <p className="text-lg text-muted max-w-lg leading-[1.6]">
               Where I&apos;ve worked and what I&apos;ve built.
             </p>
           </motion.div>
 
-          <SectionReveal className="mb-20">
-            <h2 className="text-xs font-medium text-accent tracking-wider uppercase mb-8">
+          <SectionReveal className="mb-24">
+            <h2 className="text-sm text-accent tracking-[0.15em] uppercase mb-10">
               Experience
             </h2>
-            <div className="space-y-4">
+            <div className="divide-y divide-border">
               {experience.map((job, i) => (
                 <ExperienceCard key={i} job={job} index={i} />
               ))}
@@ -62,22 +63,20 @@ export default function ProjectsPage() {
           </SectionReveal>
 
           <SectionReveal>
-            <h2 className="text-xs font-medium text-accent tracking-wider uppercase mb-8">
+            <h2 className="text-sm text-accent tracking-[0.15em] uppercase mb-10">
               Projects
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-border rounded-lg overflow-hidden">
               {projects.map((project, i) => (
                 <StaggerChild key={i} index={i}>
-                  <motion.a
+                  <a
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group block p-5 rounded-xl border border-border hover:border-accent/30 bg-card transition-colors duration-300 h-full"
-                    whileHover={{ scale: 1.02, y: -2 }}
-                    transition={{ duration: 0.2 }}
+                    className="group block p-6 bg-card hover:bg-accent-muted transition-colors duration-200 h-full"
                   >
                     <div className="flex items-start justify-between mb-3">
-                      <h3 className="font-semibold group-hover:text-accent transition-colors">
+                      <h3 className="font-medium group-hover:text-accent transition-colors">
                         {project.name}
                       </h3>
                       <div className="flex items-center gap-2">
@@ -92,20 +91,21 @@ export default function ProjectsPage() {
                           stroke="currentColor"
                           strokeWidth="2"
                           className="text-muted group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+                          aria-hidden="true"
                         >
                           <path d="M7 17L17 7M17 7H7M17 7v10" />
                         </svg>
                       </div>
                     </div>
-                    <p className="text-sm text-muted leading-relaxed mb-2">
+                    <p className="text-sm text-muted leading-[1.6] mb-2">
                       {project.description}
                     </p>
                     {project.detail && (
-                      <p className="text-xs text-muted/70 leading-relaxed">
+                      <p className="text-xs text-muted/70 leading-[1.6]">
                         {project.detail}
                       </p>
                     )}
-                  </motion.a>
+                  </a>
                 </StaggerChild>
               ))}
             </div>
