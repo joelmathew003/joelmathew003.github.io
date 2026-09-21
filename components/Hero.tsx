@@ -59,7 +59,7 @@ export function Hero() {
               </svg>
             </a>
             <a
-              href={`mailto:${personal.email}`}
+              href="#contact"
               className="inline-flex items-center gap-2 px-5 py-2.5 border border-border text-sm tracking-wide rounded-full hover:border-muted transition-colors"
             >
               Get in touch
