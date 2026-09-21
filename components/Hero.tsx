@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { personal } from "@/lib/data";
 import { DotGrid } from "./DotGrid";
@@ -40,7 +41,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
           >
-            <a
+            <Link
               href="/projects"
               className="group inline-flex items-center gap-2 px-5 py-2.5 bg-foreground text-background text-sm tracking-wide rounded-full hover:opacity-90 transition-opacity"
             >
@@ -57,7 +58,7 @@ export function Hero() {
               >
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
-            </a>
+            </Link>
             <a
               href="#contact"
               className="inline-flex items-center gap-2 px-5 py-2.5 border border-border text-sm tracking-wide rounded-full hover:border-muted transition-colors"

@@ -1,13 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "./ThemeToggle";
 
 const links = [
-  { href: "/#about", label: "About" },
-  { href: "/projects", label: "Projects" },
+  { href: "/projects", label: "Work" },
   { href: "/taste", label: "Taste" },
+  { href: "/arcade", label: "Arcade" },
 ];
 
 export function Navbar() {
@@ -23,23 +24,23 @@ export function Navbar() {
       aria-label="Main navigation"
     >
       <div className="max-w-[1000px] mx-auto px-6 h-14 flex items-center justify-between">
-        <a
+        <Link
           href="/"
           className="text-sm tracking-wide hover:text-accent transition-colors"
           aria-label="Joel Mathew — Home"
         >
           jsm
-        </a>
+        </Link>
 
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="text-sm text-muted hover:text-foreground transition-colors"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
           <ThemeToggle />
         </div>
@@ -82,14 +83,14 @@ export function Navbar() {
           >
             <div className="px-6 py-4 flex flex-col gap-3">
               {links.map((link) => (
-                <a
+                <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className="text-sm text-muted hover:text-foreground transition-colors"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
           </motion.div>

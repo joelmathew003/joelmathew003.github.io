@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { taste } from "@/lib/data";
 import { SectionReveal, StaggerChild } from "@/components/SectionReveal";
@@ -24,7 +25,7 @@ export default function TastePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <a
+            <Link
               href="/"
               className="inline-flex items-center gap-2 text-sm text-muted hover:text-foreground transition-colors mb-16"
             >
@@ -40,7 +41,7 @@ export default function TastePage() {
                 <path d="M19 12H5M12 19l-7-7 7-7" />
               </svg>
               Back
-            </a>
+            </Link>
           </motion.div>
 
           <motion.div

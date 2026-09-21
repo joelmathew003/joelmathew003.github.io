@@ -29,28 +29,17 @@ export const education = [
 export const experience = [
   {
     company: "Arista Networks",
-    location: "Bangalore, India",
     role: "Software Engineer",
-    date: "July 2025 — September 2026",
-    bullets: [
-      "Built Grafana dashboards on Artifactory access logs to surface upload activity, caller IP, and invoking tool, giving the release team visibility into release-repository usage that hadn't existed before.",
-      "Traced ~100K daily calls to Artifactory (at peak) made under a single shared token back to their originating call sites, then migrated each to per-identity authentication via Dex/OIDC token exchange, closing an unaudited access path.",
-      "Implemented CMS-based cryptographic signing for EOS VM image releases, which previously shipped with no way to verify authenticity, and authored the customer-facing TOI for signature verification.",
-      "Enabled SSH audit logging across release build servers, with events forwarded to CrowdStrike Falcon SIEM for centralized monitoring.",
-      "Engineered a standardized release pipeline for Arista's WiFi product by integrating it with the EOS release framework and automating workflows across the release lifecycle.",
-    ],
+    date: "Jul 2025 — Sep 2026",
+    summary:
+      "Worked in the Secure Releases team — everything we built was about making sure what ships to customers is authentic and untampered. I got deep into cryptographic signing, provenance, and supply chain integrity, which turned out to be genuinely fascinating. Built tooling around CMS-based image signing, migrated a flood of shared-token API calls to proper per-identity auth via OIDC, and set up audit logging pipelines that feed into CrowdStrike. The kind of work where you're one bad merge away from a very bad day.",
   },
   {
     company: "ColorTokens Inc.",
-    location: "Bangalore, India",
     role: "Member of Technical Staff — II",
-    date: "July 2023 — July 2025",
-    bullets: [
-      "Developed and integrated a dynamic rule engine for policy enforcement within XShield, a zero-trust management platform, reducing infrastructure overhead for key components by over 50% while improving scalability.",
-      "Designed and implemented Layer 3 network policy enforcement within the container micro-segmentation framework using Istio and OPA, enabling fine-grained control over network traffic paths.",
-      "Implemented an opt-in north-south traffic visibility feature, a platform-level switch enabling packet telemetry collection on the server agent, improving control over traffic monitoring and analytics.",
-      "Sole technical point of contact for container micro-segmentation across customer POCs, resolving production issues end to end.",
-    ],
+    date: "Jul 2023 — Jul 2025",
+    summary:
+      "My first real job, and it threw me straight into cybersecurity. ColorTokens builds a zero-trust platform called XShield, and I spent two years working on its policy engine and container micro-segmentation. Seeing actual breach simulations, understanding lateral movement, and writing iptables rules to block it — that was the stuff that made me want to stay in this space. I ended up being the sole technical point of contact for container security across customer POCs, which was equal parts terrifying and formative.",
   },
 ];
 
@@ -60,34 +49,32 @@ export const projects = [
     date: "Aug — Dec 2022",
     url: "https://github.com/ishwargov/PlexShare",
     description:
-      "Lab session monitoring app in C# with screensharing, collaborative whiteboard, file uploads, and chat. Built key whiteboard features including session persistence, serialization, and inter-module networking.",
-    detail:
-      "Stress-tested with ~30 concurrent users screen-sharing and whiteboarding simultaneously in a live trial.",
+      "Lab session monitoring app with screensharing, collaborative whiteboard, file uploads, and chat. Built the core whiteboard features — session persistence, serialization, and the networking layer between modules.",
+    image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&q=80",
   },
   {
     name: "Mail Tag Generator",
     date: "Jan — May 2023",
     url: "https://github.com/joelmathew003/Gmail-Mail-Tagging",
     description:
-      "Personalized email tagging system combining LDA topic modeling with GloVe embeddings for candidate tag ranking.",
-    detail:
-      "Implemented as a Chrome extension in JavaScript, generating contextually relevant tags for Gmail messages in real time.",
+      "Chrome extension that generates contextual tags for Gmail messages in real time, using LDA topic modeling combined with GloVe embeddings for candidate ranking.",
+    image: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=600&q=80",
   },
   {
-    name: "Android Malware Detection using GNN",
+    name: "Android Malware Detection",
     date: "Jan — May 2022",
     url: "https://github.com/joelmathew003/Android-Malware-Detection",
     description:
-      "Android malware detection approach using Graph Neural Networks trained on API call graphs.",
-    detail:
-      "Applied explainability techniques including GNNExplainer and SubgraphX to identify influential subgraphs and investigate model predictions.",
+      "Malware detection using Graph Neural Networks trained on API call graphs. Used GNNExplainer and SubgraphX to identify which subgraphs actually drive predictions.",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&q=80",
   },
   {
     name: "Tiger Compiler",
     date: "Jan — May 2022",
     url: "https://github.com/joelmathew003/Tiger-Compiler",
     description:
-      "Compiler for the Tiger programming language in Standard ML using ML-Lex and ML-Yacc, generating MIPS assembly code.",
+      "End-to-end compiler for the Tiger language in Standard ML — lexer, parser, type checker, IR generation, and MIPS assembly output.",
+    image: "https://images.unsplash.com/photo-1515879218367-8466d910auj7?w=600&q=80",
   },
 ];
 
