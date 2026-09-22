@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { taste } from "@/lib/data";
-import { SectionReveal, StaggerChild } from "@/components/SectionReveal";
+import { SectionReveal } from "@/components/SectionReveal";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
@@ -13,6 +13,44 @@ const categories = [
   { key: "books" as const, label: "Books" },
   { key: "music" as const, label: "Music" },
 ];
+
+function ScrollRow({
+  items,
+}: {
+  items: { title: string; note: string; image: string }[];
+}) {
+  return (
+    <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-3 -mx-6 px-6">
+      {items.map((item, i) => (
+        <motion.div
+          key={i}
+          className="snap-start shrink-0 w-[200px] sm:w-[220px] group/card"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: i * 0.05 }}
+        >
+          <div className="relative aspect-[2/3] rounded-lg overflow-hidden border border-border bg-card">
+            <img
+              src={item.image}
+              alt={item.title}
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover/card:scale-105"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-4">
+              <h3 className="font-medium text-sm text-white">
+                {item.title}
+              </h3>
+              <p className="text-xs text-white/70 mt-1 leading-[1.5] line-clamp-3">
+                {item.note}
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  );
+}
 
 export default function TastePage() {
   return (
@@ -59,27 +97,13 @@ export default function TastePage() {
             </p>
           </motion.div>
 
-          <div className="space-y-24">
+          <div className="space-y-20">
             {categories.map((cat) => (
               <SectionReveal key={cat.key}>
-                <h2 className="text-sm text-accent tracking-[0.15em] uppercase mb-8">
+                <h2 className="text-sm text-accent tracking-[0.15em] uppercase mb-6">
                   {cat.label}
                 </h2>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-px bg-border rounded-lg overflow-hidden">
-                  {taste[cat.key].map((item, i) => (
-                    <StaggerChild key={i} index={i}>
-                      <div className="group p-5 bg-card hover:bg-accent-muted transition-colors duration-200">
-                        <h3 className="font-medium text-sm group-hover:text-accent transition-colors">
-                          {item.title}
-                        </h3>
-                        <p className="text-xs text-muted mt-1.5 leading-[1.5]">
-                          {item.note}
-                        </p>
-                      </div>
-                    </StaggerChild>
-                  ))}
-                </div>
+                <ScrollRow items={taste[cat.key]} />
               </SectionReveal>
             ))}
           </div>
