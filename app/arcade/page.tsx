@@ -8,6 +8,7 @@ import { GameOfLife } from "@/components/arcade/GameOfLife";
 import { EcosystemSim } from "@/components/arcade/EcosystemSim";
 import { DotPursuit } from "@/components/arcade/DotPursuit";
 import { MemoryAllocator } from "@/components/arcade/MemoryAllocator";
+import { LangtonsAnt } from "@/components/arcade/LangtonsAnt";
 
 export default function ArcadePage() {
   return (
@@ -76,6 +77,14 @@ export default function ArcadePage() {
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               <DotPursuit />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.35 }}
+            >
+              <LangtonsAnt />
             </motion.div>
 
             <motion.div
