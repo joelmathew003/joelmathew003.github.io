@@ -34,7 +34,7 @@ export function Contact() {
         </p>
         <p className="text-muted mb-12 max-w-md leading-[1.6]">
           Currently in {personal.location}. Open to conversations about
-          systems, security, and interesting problems.
+          systems, security, AI, and interesting problems.
         </p>
 
         <div className="flex flex-col sm:flex-row flex-wrap gap-3">

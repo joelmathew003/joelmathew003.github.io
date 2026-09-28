@@ -11,22 +11,26 @@ export function About() {
         </h2>
 
         <div className="flex flex-col sm:flex-row gap-10">
-          <p className="text-lg text-muted leading-[1.7] max-w-2xl flex-1">
-            Software engineer with experience building zero-trust security platforms,
-            release infrastructure, and developer tooling. I like working on systems
-            where reliability matters — authentication, policy enforcement, and
-            build pipelines. Did my bachelors at IIT Palakkad, now heading to TUM
-            for grad school.
-          </p>
-          <div className="relative group shrink-0 sm:-mt-16">
+          <div className="text-lg text-muted leading-[1.7] max-w-2xl flex-1 space-y-6">
+            <p>
+              I&apos;m a software engineer who has worked on security products and
+              infrastructure. I&apos;m interested in what makes systems trustworthy:
+              security and privacy guarantees that are enforceable in the
+              architecture, verifiable in practice, and not dependent on blind trust
+              in the organization operating them.
+            </p>
+            <p>
+              Outside work, I love travelling and riding my motorcycle. I also enjoy 
+              hitting the gym, football and badminton. On quieter days, 
+              I play piano, sketch, or watch anime.
+            </p>
+          </div>
+          <div className="shrink-0 sm:-mt-16">
             <img
               src="/joel.jpg"
               alt="Joel Mathew"
               className="w-48 h-56 rounded-lg object-cover border border-border"
             />
-            <span className="absolute bottom-2 left-2 right-2 text-xs text-white/90 bg-black/60 backdrop-blur-sm rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-              Me with my favourite mango beer
-            </span>
           </div>
         </div>
       </div>

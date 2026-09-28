@@ -128,8 +128,14 @@ export function WaveName({ text }: WaveNameProps) {
   const words = text.split(" ");
   let charIndex = 0;
 
+  const weightClass = (wordIndex: number, characterIndex: number) => {
+    if (wordIndex === 0) return "font-bold";
+    const mathewWeights = ["font-[600]", "font-[550]", "font-[500]", "font-[450]"];
+    return mathewWeights[characterIndex] ?? "font-normal";
+  };
+
   return (
-    <h1 className="text-5xl sm:text-6xl md:text-7xl font-display font-bold tracking-tight leading-[1.05]">
+    <h1 className="text-5xl sm:text-6xl md:text-7xl font-display tracking-tight leading-[1.05]">
       {words.map((word, wi) => {
         const wordChars = word.split("").map((_, ci) => {
           const idx = charIndex++;
@@ -156,8 +162,15 @@ export function WaveName({ text }: WaveNameProps) {
         });
 
         return (
-          <span key={wi} className="inline-block mr-[0.25em] whitespace-nowrap">
-            {wordChars}
+          <span
+            key={wi}
+            className={`inline-block mr-[0.25em] whitespace-nowrap ${weightClass(wi, 0)}`}
+          >
+            {wordChars.map((character, ci) => (
+              <span key={ci} className={weightClass(wi, ci)}>
+                {character}
+              </span>
+            ))}
           </span>
         );
       })}

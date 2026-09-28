@@ -7,17 +7,34 @@ import { SectionReveal } from "@/components/SectionReveal";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
-const categories = [
-  { key: "films" as const, label: "Films" },
-  { key: "anime" as const, label: "Anime" },
-  { key: "books" as const, label: "Books" },
-  { key: "music" as const, label: "Music" },
+type TasteCategory = {
+  key: keyof typeof taste;
+  label: string;
+  href?: string;
+  linkLabel?: string;
+};
+
+const categories: TasteCategory[] = [
+  { key: "films", label: "Films" },
+  {
+    key: "anime",
+    label: "Anime",
+    href: "https://myanimelist.net/profile/LostLegion",
+    linkLabel: "MyAnimeList",
+  },
+  {
+    key: "books",
+    label: "Books",
+    href: "https://www.goodreads.com/user/show/202117053-joel-mathew",
+    linkLabel: "Goodreads",
+  },
+  { key: "music", label: "Music" },
 ];
 
 function ScrollRow({
   items,
 }: {
-  items: { title: string; note: string; image: string }[];
+  items: { title: string; image: string }[];
 }) {
   return (
     <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory pb-3 -mx-6 px-6">
@@ -41,9 +58,6 @@ function ScrollRow({
               <h3 className="font-medium text-sm text-white">
                 {item.title}
               </h3>
-              <p className="text-xs text-white/70 mt-1 leading-[1.5] line-clamp-3">
-                {item.note}
-              </p>
             </div>
           </div>
         </motion.div>
@@ -100,9 +114,32 @@ export default function TastePage() {
           <div className="space-y-20">
             {categories.map((cat) => (
               <SectionReveal key={cat.key}>
-                <h2 className="text-sm text-accent tracking-[0.15em] uppercase mb-6">
-                  {cat.label}
-                </h2>
+                <div className="flex items-center gap-3 mb-6">
+                  <h2 className="text-sm text-accent tracking-[0.15em] uppercase">
+                    {cat.label}
+                  </h2>
+                  {cat.href && (
+                    <a
+                      href={cat.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs text-muted hover:text-accent transition-colors"
+                    >
+                      {cat.linkLabel}
+                      <svg
+                        width="11"
+                        height="11"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        aria-hidden="true"
+                      >
+                        <path d="M7 17L17 7M17 7H7M17 7v10" />
+                      </svg>
+                    </a>
+                  )}
+                </div>
                 <ScrollRow items={taste[cat.key]} />
               </SectionReveal>
             ))}

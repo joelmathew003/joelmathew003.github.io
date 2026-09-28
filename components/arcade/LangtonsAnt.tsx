@@ -115,7 +115,16 @@ export function LangtonsAnt() {
     <div>
       <div className="flex items-center justify-between mb-3">
         <div>
-          <h3 className="font-medium">Langton&apos;s Ant</h3>
+          <h3 className="font-medium">
+            <a
+              href="https://en.wikipedia.org/wiki/Langton%27s_ant"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-accent transition-colors"
+            >
+              Langton&apos;s Ant
+            </a>
+          </h3>
           <p className="text-xs text-muted mt-0.5">
             Step {stepCount.toLocaleString()}
           </p>

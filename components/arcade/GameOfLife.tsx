@@ -173,7 +173,16 @@ export function GameOfLife() {
     <div>
       <div className="flex items-center justify-between mb-3">
         <div>
-          <h3 className="font-medium">Game of Life</h3>
+          <h3 className="font-medium">
+            <a
+              href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-accent transition-colors"
+            >
+              Conway&apos;s Game of Life
+            </a>
+          </h3>
           <p className="text-xs text-muted mt-0.5">
             Gen {gen} · Click or drag to draw
           </p>
