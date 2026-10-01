@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Taste",
   description:
-    "A curated collection of films, anime, books, and music that shaped how I think.",
+    "Some media I've enjoyed.",
 };
 
 export default function TasteLayout({

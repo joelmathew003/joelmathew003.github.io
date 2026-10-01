@@ -48,7 +48,7 @@ export default function ProjectsPage() {
               Work
             </h1>
             <p className="text-lg text-muted max-w-lg leading-[1.6]">
-              Where I&apos;ve worked and what I&apos;ve built.
+              Where I&apos;ve worked and what I&apos;ve built
             </p>
           </motion.div>
 
@@ -77,7 +77,7 @@ export default function ProjectsPage() {
                     className="group relative block p-6 rounded-lg border border-border overflow-hidden bg-card h-full transition-colors duration-300 hover:border-accent/30"
                   >
                     <div
-                      className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-[0.08] transition-opacity duration-500"
+                      className="absolute inset-0 bg-cover bg-center opacity-0 group-hover:opacity-[0.10] transition-opacity duration-500"
                       style={{ backgroundImage: `url(${project.image})` }}
                       aria-hidden="true"
                     />

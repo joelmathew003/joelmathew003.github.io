@@ -50,7 +50,7 @@ export default function ArcadePage() {
               Arcade
             </h1>
             <p className="text-lg text-muted max-w-lg leading-[1.6]">
-              Interactive toys. No purpose, just fun.
+              No purpose, just fun.
             </p>
           </motion.div>
 

@@ -13,11 +13,10 @@ export function About() {
         <div className="flex flex-col sm:flex-row gap-10">
           <div className="text-lg text-muted leading-[1.7] max-w-2xl flex-1 space-y-6">
             <p>
-              I&apos;m a software engineer who has worked on security products and
-              infrastructure. I&apos;m interested in what makes systems trustworthy:
-              security and privacy guarantees that are enforceable in the
-              architecture, verifiable in practice, and not dependent on blind trust
-              in the organization operating them.
+              Software engineer with a background in security and infrastructure. 
+              I’m interested in the principles behind trustworthy systems, security and 
+              privacy, and in understanding how AI will change these areas. I like learning 
+              and building new things, and generally figuring out how things work.
             </p>
             <p>
               Outside work, I love travelling and riding my motorcycle. I also enjoy 
@@ -25,7 +24,7 @@ export function About() {
               I play piano, sketch, or watch anime.
             </p>
           </div>
-          <div className="shrink-0 sm:-mt-16">
+          <div className="flex flex-col sm:flex-row gap-10">
             <img
               src="/joel.jpg"
               alt="Joel Mathew"

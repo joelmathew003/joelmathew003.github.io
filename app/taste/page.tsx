@@ -102,12 +102,11 @@ export default function TastePage() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mb-20"
           >
-            <h1 className="text-4xl sm:text-5xl font-display tracking-tight mb-4">
+            <h1 className="text-4xl sm:text-5xl font-display font-bold tracking-tight mb-4">
               Taste
             </h1>
             <p className="text-lg text-muted max-w-lg leading-[1.6]">
-              A curated collection of things that shaped how I think, see, and
-              build. Not exhaustive — just the ones that stuck.
+              Some media I&apos;ve enjoyed over the years
             </p>
           </motion.div>
 
