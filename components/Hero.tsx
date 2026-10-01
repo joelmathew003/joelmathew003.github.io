@@ -26,20 +26,11 @@ export function Hero() {
 
           <WaveName text={personal.name} />
 
-          <motion.p
-            className="text-lg sm:text-xl text-muted max-w-lg leading-[1.6]"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-          >
-            {personal.subtitle}
-          </motion.p>
-
           <motion.div
             className="flex flex-wrap gap-4 pt-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.9 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
           >
             <Link
               href="/projects"

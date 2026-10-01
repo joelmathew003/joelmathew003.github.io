@@ -13,14 +13,35 @@ export function About() {
         <div className="flex flex-col sm:flex-row gap-10">
           <div className="text-lg text-muted leading-[1.7] max-w-2xl flex-1 space-y-6">
             <p>
-              Software engineer with a background in security and infrastructure. 
-              I’m interested in the principles behind trustworthy systems, security and 
-              privacy, and in understanding how AI will change these areas. I like learning 
-              and building new things, and generally figuring out how things work.
+              Hi, I'm Joel. 
+              I'm a M.Sc. student in Computer Science (Informatics) at{" "}
+              <a
+                href="https://www.tum.de/en/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground underline decoration-border underline-offset-4 hover:text-accent hover:decoration-accent transition-colors"
+              >
+                Technical University of Munich (TUM)
+              </a>.
             </p>
             <p>
-              Outside work, I love travelling and riding my motorcycle. I also enjoy 
-              hitting the gym, football and badminton. On quieter days, 
+              Before that, I worked as a software engineer in security and infrastructure.
+              I’m interested in the principles behind trustworthy systems, security and
+              privacy, and in understanding how AI will change these areas. I like learning
+              and building new things, and generally figuring out how things work.
+              I did my Bachelor's in Computer Science at{" "}
+              <a
+                href="https://iitpkd.ac.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground underline decoration-border underline-offset-4 hover:text-accent hover:decoration-accent transition-colors"
+              >
+                IIT Palakkad
+              </a>.
+            </p>
+            <p>
+              Outside work, I love travelling and riding my motorcycle. I also enjoy
+              hitting the gym, football and badminton. On quieter days,
               I play piano, sketch, or watch anime.
             </p>
           </div>
