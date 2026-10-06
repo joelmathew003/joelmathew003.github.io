@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
-import { CursorGlow } from "@/components/CursorGlow";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import "./globals.css";
 
@@ -66,7 +65,6 @@ export default function RootLayout({
       <body className="min-h-screen antialiased">
         <ThemeProvider>
           <ScrollToTop />
-          <CursorGlow />
           {children}
         </ThemeProvider>
       </body>

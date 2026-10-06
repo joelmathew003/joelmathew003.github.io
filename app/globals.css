@@ -13,16 +13,13 @@
 }
 
 :root {
-  --background: #fafaf9;
+  --background: #f4f2ee;
   --foreground: #1a1a1a;
   --muted: #6b6b6b;
-  --border-color: #e8e5e1;
-  --card: #ffffff;
+  --border-color: #dfdcd6;
+  --card: #fbfaf8;
   --accent: #2563eb;
   --accent-muted: rgba(37, 99, 235, 0.06);
-  --glow-color: rgba(37, 99, 235, 0.08);
-  --dot-color: rgba(0, 0, 0, 0.06);
-  --dot-active: rgba(37, 99, 235, 0.3);
 }
 
 [data-theme="dark"] {
@@ -33,20 +30,12 @@
   --card: #141414;
   --accent: #93b4f5;
   --accent-muted: rgba(147, 180, 245, 0.06);
-  --glow-color: rgba(147, 180, 245, 0.08);
-  --dot-color: rgba(255, 255, 255, 0.04);
-  --dot-active: rgba(147, 180, 245, 0.35);
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body), system-ui, sans-serif;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {

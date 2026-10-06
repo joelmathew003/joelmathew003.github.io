@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
@@ -11,14 +10,10 @@ export default function ResumePage() {
       <Navbar />
       <div className="min-h-screen pt-14">
         <div className="max-w-[1000px] mx-auto px-6 py-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-sm text-muted hover:text-foreground transition-colors mb-16"
+              className="inline-flex items-center gap-2 text-sm text-muted hover:text-foreground mb-16"
             >
               <svg
                 width="14"
@@ -33,14 +28,9 @@ export default function ResumePage() {
               </svg>
               Back
             </Link>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mb-8"
-          >
+          <div className="mb-8">
             <div className="flex items-center justify-between">
               <h1 className="text-4xl sm:text-5xl font-display font-bold tracking-tight">
                 Resume
@@ -48,7 +38,7 @@ export default function ResumePage() {
               <a
                 href="/resume.pdf"
                 download
-                className="inline-flex items-center gap-2 px-4 py-2 text-sm border border-border rounded-full hover:border-accent hover:text-accent transition-colors"
+                className="inline-flex items-center gap-2 px-4 py-2 text-sm border border-border rounded-full hover:border-accent hover:text-accent"
               >
                 <svg
                   width="14"
@@ -64,13 +54,9 @@ export default function ResumePage() {
                 Download
               </a>
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+          <div>
             <div className="w-full rounded-lg border border-border overflow-hidden bg-card">
               <iframe
                 src="/resume.pdf"
@@ -78,7 +64,7 @@ export default function ResumePage() {
                 title="Resume"
               />
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
       <Footer />

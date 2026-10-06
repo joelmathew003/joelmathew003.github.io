@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { GameOfLife } from "@/components/arcade/GameOfLife";
@@ -16,14 +15,10 @@ export default function ArcadePage() {
       <Navbar />
       <div className="min-h-screen pt-14">
         <div className="max-w-[1000px] mx-auto px-6 py-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <Link
               href="/"
-              className="inline-flex items-center gap-2 text-sm text-muted hover:text-foreground transition-colors mb-16"
+              className="inline-flex items-center gap-2 text-sm text-muted hover:text-foreground mb-16"
             >
               <svg
                 width="14"
@@ -38,62 +33,23 @@ export default function ArcadePage() {
               </svg>
               Back
             </Link>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mb-16"
-          >
+          <div className="mb-16">
             <h1 className="text-4xl sm:text-5xl font-display font-bold tracking-tight mb-4">
               Arcade
             </h1>
             <p className="text-lg text-muted max-w-lg leading-[1.6]">
-              No purpose, just fun.
+              No purpose, just for fun
             </p>
-          </motion.div>
+          </div>
 
           <div className="space-y-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <GameOfLife />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.25 }}
-            >
-              <EcosystemSim />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <DotPursuit />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.35 }}
-            >
-              <LangtonsAnt />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-            >
-              <MemoryAllocator />
-            </motion.div>
+            <GameOfLife />
+            <EcosystemSim />
+            <DotPursuit />
+            <LangtonsAnt />
+            <MemoryAllocator />
           </div>
         </div>
       </div>

@@ -1,21 +1,17 @@
 "use client";
 
 import { useTheme } from "./ThemeProvider";
-import { motion } from "framer-motion";
 
 export function ThemeToggle() {
   const { theme, toggle } = useTheme();
 
   return (
-    <motion.button
+    <button
       onClick={toggle}
-      className="relative w-9 h-9 flex items-center justify-center rounded-full border border-border hover:border-muted transition-colors"
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.9 }}
+      className="relative w-9 h-9 flex items-center justify-center rounded-full border border-border hover:border-muted"
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
     >
-      <motion.svg
-        key={theme}
+      <svg
         width="18"
         height="18"
         viewBox="0 0 24 24"
@@ -24,9 +20,6 @@ export function ThemeToggle() {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-        initial={{ rotate: -90, opacity: 0 }}
-        animate={{ rotate: 0, opacity: 1 }}
-        transition={{ duration: 0.3 }}
       >
         {theme === "dark" ? (
           <>
@@ -43,7 +36,7 @@ export function ThemeToggle() {
         ) : (
           <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
         )}
-      </motion.svg>
-    </motion.button>
+      </svg>
+    </button>
   );
 }
